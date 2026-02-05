@@ -624,94 +624,70 @@
             box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
         }
 
-        /* ESSODIDI Content Display */
-        .essodidi-content {
-            display: none;
-            background: linear-gradient(135deg, rgba(0, 106, 78, 0.1), rgba(210, 16, 52, 0.05));
+        /* Access Granted Section */
+        .access-granted-section {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(46, 204, 113, 0.05));
             border-radius: var(--border-radius);
             padding: 40px;
             margin-top: 30px;
-            border: 3px solid var(--togo-yellow);
-        }
-
-        .essodidi-header {
+            border: 3px solid var(--success);
             text-align: center;
+            display: none;
+        }
+
+        .access-granted-header {
             margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--togo-red);
         }
 
-        .essodidi-header h2 {
-            font-size: 2.2rem;
-            color: var(--togo-yellow);
-            margin-bottom: 10px;
+        .access-granted-header h3 {
+            color: var(--success);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
-        .essodidi-header p {
-            color: var(--togo-yellow);
+        .access-granted-header p {
+            color: var(--gray);
             font-size: 1.1rem;
         }
 
-        .essodidi-body {
-            margin: 30px 0;
-        }
-
-        .info-card {
-            background: rgba(0, 106, 78, 0.1);
-            border-left: 5px solid var(--togo-red);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-
-        .info-card h3 {
-            color: var(--togo-yellow);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-card p {
-            color: var(--light);
-            line-height: 1.6;
-        }
-
-        .success-badge {
-            text-align: center;
-            padding: 30px;
-            background: rgba(46, 204, 113, 0.2);
-            border: 2px solid var(--success);
-            border-radius: var(--border-radius);
-            margin: 30px 0;
-        }
-
-        .success-badge h3 {
-            color: var(--success);
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        /* Back Button */
-        .back-btn {
-            background: var(--togo-red);
+        .esodi-file-btn {
+            background: linear-gradient(135deg, var(--togo-green), var(--togo-red));
             color: white;
             border: none;
-            padding: 10px 25px;
+            padding: 15px 40px;
             border-radius: var(--border-radius);
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            border: 2px solid var(--togo-yellow);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 15px;
+            border: 3px solid var(--togo-yellow);
+            margin: 20px 0;
         }
 
-        .back-btn:hover {
-            background: #b80e2d;
-            transform: translateY(-2px);
+        .esodi-file-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 106, 78, 0.4);
+        }
+
+        .code-saved-info {
+            background: rgba(255, 206, 0, 0.1);
+            border: 2px solid var(--togo-yellow);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .code-saved-info p {
+            color: var(--togo-yellow);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         /* Footer */
@@ -813,7 +789,7 @@
                 padding: 25px 20px;
             }
 
-            .essodidi-content {
+            .access-granted-section {
                 padding: 25px 20px;
             }
         }
@@ -893,297 +869,218 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="container">
-                <!-- Plateforme principale (visible par défaut) -->
-                <div id="platformMain">
-                    <div class="platform-intro">
-                        <h2>Bienvenue sur la Plateforme de Développement Web</h2>
-                        <p>Accédez à tous les outils et services pour le développement web moderne et la formation ESODI</p>
-                    </div>
+                <div class="platform-intro">
+                    <h2>Bienvenue sur la Plateforme de Développement Web</h2>
+                    <p>Accédez à tous les outils et services pour le développement web moderne et la formation ESODI</p>
+                </div>
 
-                    <!-- Tabs Navigation -->
-                    <div class="tabs-navigation">
-                        <button class="tab-btn active" data-tab="tools">
-                            <i class="fas fa-tools"></i>
-                            <span>Outils de Développement</span>
-                        </button>
-                        <button class="tab-btn" data-tab="esodi">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Formation ESODI</span>
-                        </button>
-                        <button class="tab-btn" data-tab="access">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Accès au Fichier</span>
-                        </button>
-                    </div>
+                <!-- Tabs Navigation -->
+                <div class="tabs-navigation">
+                    <button class="tab-btn active" data-tab="tools">
+                        <i class="fas fa-tools"></i>
+                        <span>Outils de Développement</span>
+                    </button>
+                    <button class="tab-btn" data-tab="esodi">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Formation ESODI</span>
+                    </button>
+                    <button class="tab-btn" data-tab="access">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Accès au Fichier</span>
+                    </button>
+                </div>
 
-                    <!-- Tools Tab -->
-                    <div class="tab-content active" id="tools">
-                        <div class="tools-grid">
-                            <div class="tool-card" data-link="https://html.onlineviewer.net/">
-                                <div class="tool-icon">
-                                    <i class="fab fa-html5"></i>
-                                </div>
-                                <h3 class="tool-title">HTML Online Viewer</h3>
-                                <p class="tool-description">Visualiseur HTML en ligne pour prévisualiser votre code directement dans le navigateur</p>
+                <!-- Tools Tab -->
+                <div class="tab-content active" id="tools">
+                    <div class="tools-grid">
+                        <div class="tool-card" data-link="https://html.onlineviewer.net/">
+                            <div class="tool-icon">
+                                <i class="fab fa-html5"></i>
                             </div>
-                            
-                            <div class="tool-card" data-link="https://github.com/login">
-                                <div class="tool-icon">
-                                    <i class="fab fa-github"></i>
-                                </div>
-                                <h3 class="tool-title">GitHub</h3>
-                                <p class="tool-description">Plateforme de développement collaboratif et de contrôle de version</p>
-                            </div>
-                            
-                            <div class="tool-card" data-link="https://app.netlify.com/login">
-                                <div class="tool-icon">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                </div>
-                                <h3 class="tool-title">Netlify</h3>
-                                <p class="tool-description">Hébergement et déploiement continu pour applications modernes</p>
-                            </div>
-                            
-                            <div class="tool-card" data-link="https://www.jotform.com/">
-                                <div class="tool-icon">
-                                    <i class="fas fa-file-alt"></i>
-                                </div>
-                                <h3 class="tool-title">JotForm</h3>
-                                <p class="tool-description">Création de formulaires en ligne avec hébergement intégré</p>
-                            </div>
-                            
-                            <div class="tool-card" data-link="https://webcatalog.io/fr/apps/deepseek">
-                                <div class="tool-icon">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <h3 class="tool-title">DeepSeek PWA</h3>
-                                <p class="tool-description">Assistant IA accessible via application web progressive</p>
-                            </div>
+                            <h3 class="tool-title">HTML Online Viewer</h3>
+                            <p class="tool-description">Visualiseur HTML en ligne pour prévisualiser votre code directement dans le navigateur</p>
                         </div>
-                    </div>
-
-                    <!-- ESODI Formation Tab -->
-                    <div class="tab-content" id="esodi">
-                        <div class="esodi-section">
-                            <div class="esodi-header">
-                                <h2><i class="fas fa-graduation-cap"></i> Cabinet ESODI</h2>
-                                <p>Formation en Conception de Produits Digitaux - Excellence Professionnelle</p>
-                                <p style="color: var(--togo-yellow); margin-top: 10px;">
-                                    <i class="fas fa-certificate"></i> Certification Internationale
-                                </p>
+                        
+                        <div class="tool-card" data-link="https://github.com/login">
+                            <div class="tool-icon">
+                                <i class="fab fa-github"></i>
                             </div>
-
-                            <form id="esodiForm">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="fullName"><i class="fas fa-user"></i> Nom Complet *</label>
-                                        <input type="text" id="fullName" class="form-control" placeholder="Votre nom complet" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="email"><i class="fas fa-envelope"></i> Email *</label>
-                                        <input type="email" id="email" class="form-control" placeholder="votre@email.com" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="phone"><i class="fas fa-phone"></i> Téléphone WhatsApp *</label>
-                                        <input type="tel" id="phone" class="form-control" placeholder="+228 XX XX XX XX" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="profession"><i class="fas fa-briefcase"></i> Profession *</label>
-                                        <input type="text" id="profession" class="form-control" placeholder="Votre profession actuelle" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="education"><i class="fas fa-graduation-cap"></i> Niveau d'Étude *</label>
-                                        <select id="education" class="form-control" required>
-                                            <option value="">Sélectionnez votre niveau</option>
-                                            <option value="bac">Baccalauréat</option>
-                                            <option value="licence">Licence</option>
-                                            <option value="master">Master</option>
-                                            <option value="doctorat">Doctorat</option>
-                                            <option value="autre">Autre</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="formation"><i class="fas fa-laptop-code"></i> Formation Choisie *</label>
-                                        <select id="formation" class="form-control" required>
-                                            <option value="">Choisissez une formation</option>
-                                            <option value="uiux">Design UI/UX Avancé</option>
-                                            <option value="webdev">Développement Web Fullstack</option>
-                                            <option value="mobile">Développement Mobile</option>
-                                            <option value="digital">Marketing Digital & SEO</option>
-                                            <option value="product">Gestion de Produit Digital (Product Management)</option>
-                                            <option value="data">Data Science & Analytics</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group full-width">
-                                        <label for="experience"><i class="fas fa-history"></i> Expérience en Conception Digitale</label>
-                                        <textarea id="experience" class="form-control" placeholder="Décrivez votre expérience professionnelle dans le domaine digital..."></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group full-width">
-                                        <label for="motivation"><i class="fas fa-bullseye"></i> Motivation pour la Formation *</label>
-                                        <textarea id="motivation" class="form-control" placeholder="Pourquoi souhaitez-vous suivre cette formation avec le Cabinet ESODI ? Quels sont vos objectifs professionnels ?" required rows="4"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-submit">
-                                    <button type="submit" class="submit-btn">
-                                        <i class="fas fa-save"></i> Enregistrer ma Candidature
-                                    </button>
-                                </div>
-                            </form>
-
-                            <!-- WhatsApp Send Section -->
-                            <div class="whatsapp-section" id="whatsappSection" style="display: none;">
-                                <h3><i class="fab fa-whatsapp"></i> Envoyer par WhatsApp</h3>
-                                <p>Votre candidature a été enregistrée. Cliquez pour l'envoyer au Cabinet ESODI</p>
-                                <button id="whatsappBtn" class="whatsapp-btn">
-                                    <i class="fab fa-whatsapp"></i> Envoyer au +228 92 87 16 05
-                                </button>
-                            </div>
-
-                            <div class="success-message" id="successMessage">
-                                <i class="fas fa-check-circle"></i>
-                                <h3>Candidature enregistrée avec succès !</h3>
-                                <p>Veuillez maintenant envoyer votre candidature via WhatsApp pour finaliser l'inscription.</p>
-                            </div>
+                            <h3 class="tool-title">GitHub</h3>
+                            <p class="tool-description">Plateforme de développement collaboratif et de contrôle de version</p>
                         </div>
-                    </div>
-
-                    <!-- Access File Tab -->
-                    <div class="tab-content" id="access">
-                        <div class="access-file-section">
-                            <h3><i class="fas fa-file-alt"></i> Accès au Fichier ESSODIDI</h3>
-                            <p>Accédez au contenu ESSODIDI après avoir soumis votre candidature ESODI</p>
-                            
-                            <div class="form-group" style="margin: 20px 0;">
-                                <label for="verificationCode"><i class="fas fa-shield-alt"></i> Code de Vérification</label>
-                                <input type="text" id="verificationCode" class="form-control" placeholder="Entrez le code de vérification" style="max-width: 300px; margin: 0 auto;">
+                        
+                        <div class="tool-card" data-link="https://app.netlify.com/login">
+                            <div class="tool-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
                             </div>
-                            
-                            <button id="accessFileBtn" class="access-btn">
-                                <i class="fas fa-external-link-alt"></i> Accéder à ESSODIDI
-                            </button>
-                            
-                            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--togo-yellow);">
-                                <i class="fas fa-info-circle"></i> Le code de vérification vous sera envoyé après l'envoi de votre candidature WhatsApp
-                            </p>
+                            <h3 class="tool-title">Netlify</h3>
+                            <p class="tool-description">Hébergement et déploiement continu pour applications modernes</p>
+                        </div>
+                        
+                        <div class="tool-card" data-link="https://www.jotform.com/">
+                            <div class="tool-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3 class="tool-title">JotForm</h3>
+                            <p class="tool-description">Création de formulaires en ligne avec hébergement intégré</p>
+                        </div>
+                        
+                        <div class="tool-card" data-link="https://webcatalog.io/fr/apps/deepseek">
+                            <div class="tool-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="tool-title">DeepSeek PWA</h3>
+                            <p class="tool-description">Assistant IA accessible via application web progressive</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- ESSODIDI Content Display (caché par défaut) -->
-                <div class="essodidi-content" id="essodidiContent">
-                    <button class="back-btn" id="backBtn">
-                        <i class="fas fa-arrow-left"></i> Retour à la plateforme
-                    </button>
-                    
-                    <div class="essodidi-header">
-                        <h2><i class="fas fa-file-alt"></i> FICHIER ESSODIDI</h2>
-                        <p>Cabinet ESODI - Conception de Produits Digitaux</p>
-                    </div>
+                <!-- ESODI Formation Tab -->
+                <div class="tab-content" id="esodi">
+                    <div class="esodi-section">
+                        <div class="esodi-header">
+                            <h2><i class="fas fa-graduation-cap"></i> Cabinet ESODI</h2>
+                            <p>Formation en Conception de Produits Digitaux - Excellence Professionnelle</p>
+                            <p style="color: var(--togo-yellow); margin-top: 10px;">
+                                <i class="fas fa-certificate"></i> Certification Internationale
+                            </p>
+                        </div>
 
-                    <div class="success-badge">
-                        <h3>✅ ACCÈS AUTORISÉ</h3>
-                        <p>Votre candidature a été validée avec succès</p>
-                    </div>
-
-                    <div class="essodidi-body">
-                        <div class="info-card">
-                            <h3><i class="fas fa-user-graduate"></i> CANDIDAT ESODI</h3>
-                            <div id="candidateInfo">
-                                <!-- Les informations du candidat seront affichées ici -->
+                        <form id="esodiForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName"><i class="fas fa-user"></i> Nom Complet *</label>
+                                    <input type="text" id="fullName" class="form-control" placeholder="Votre nom complet" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email"><i class="fas fa-envelope"></i> Email *</label>
+                                    <input type="email" id="email" class="form-control" placeholder="votre@email.com" required>
+                                </div>
                             </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone"><i class="fas fa-phone"></i> Téléphone WhatsApp *</label>
+                                    <input type="tel" id="phone" class="form-control" placeholder="+228 XX XX XX XX" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profession"><i class="fas fa-briefcase"></i> Profession *</label>
+                                    <input type="text" id="profession" class="form-control" placeholder="Votre profession actuelle" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="education"><i class="fas fa-graduation-cap"></i> Niveau d'Étude *</label>
+                                    <select id="education" class="form-control" required>
+                                        <option value="">Sélectionnez votre niveau</option>
+                                        <option value="bac">Baccalauréat</option>
+                                        <option value="licence">Licence</option>
+                                        <option value="master">Master</option>
+                                        <option value="doctorat">Doctorat</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="formation"><i class="fas fa-laptop-code"></i> Formation Choisie *</label>
+                                        <select id="formation" class="form-control" required>
+                                        <option value="">Choisissez une formation</option>
+                                        <option value="uiux">Design UI/UX Avancé</option>
+                                        <option value="webdev">Développement Web Fullstack</option>
+                                        <option value="mobile">Développement Mobile</option>
+                                        <option value="digital">Marketing Digital & SEO</option>
+                                        <option value="product">Gestion de Produit Digital (Product Management)</option>
+                                        <option value="data">Data Science & Analytics</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="experience"><i class="fas fa-history"></i> Expérience en Conception Digitale</label>
+                                    <textarea id="experience" class="form-control" placeholder="Décrivez votre expérience professionnelle dans le domaine digital..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="motivation"><i class="fas fa-bullseye"></i> Motivation pour la Formation *</label>
+                                    <textarea id="motivation" class="form-control" placeholder="Pourquoi souhaitez-vous suivre cette formation avec le Cabinet ESODI ? Quels sont vos objectifs professionnels ?" required rows="4"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-submit">
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-save"></i> Enregistrer ma Candidature
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- WhatsApp Send Section -->
+                        <div class="whatsapp-section" id="whatsappSection" style="display: none;">
+                            <h3><i class="fab fa-whatsapp"></i> Envoyer par WhatsApp</h3>
+                            <p>Votre candidature a été enregistrée. Cliquez pour l'envoyer au Cabinet ESODI</p>
+                            <button id="whatsappBtn" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Envoyer au +228 92 87 16 05
+                            </button>
                         </div>
 
-                        <div class="info-card">
-                            <h3><i class="fas fa-file-contract"></i> CONTENU DU FICHIER</h3>
-                            <p>Ce fichier contient les informations confidentielles de votre candidature au Cabinet ESODI.</p>
-                            <p>Le Cabinet ESODI vous contactera pour les prochaines étapes de votre formation en conception de produits digitaux.</p>
-                        </div>
-
-                        <div class="info-card">
-                            <h3><i class="fas fa-graduation-cap"></i> PROGRAMME DE FORMATION ESODI</h3>
-                            <p><strong>Durée :</strong> 6 mois (500 heures)</p>
-                            <p><strong>Modalité :</strong> Hybride (Présentiel & Online)</p>
-                            <p><strong>Certification :</strong> Diplôme international reconnu</p>
-                            <p><strong>Modules principaux :</strong></p>
-                            <ul style="margin-left: 20px; margin-top: 10px;">
-                                <li>Design Thinking & Product Discovery</li>
-                                <li>UX Research & User Testing</li>
-                                <li>Prototypage & Wireframing</li>
-                                <li>Design System & UI Patterns</li>
-                                <li>Product Management Fundamentals</li>
-                                <li>Agile & Scrum Methodologies</li>
-                                <li>Data-Driven Product Decisions</li>
-                                <li>Go-to-Market Strategies</li>
-                            </ul>
-                        </div>
-
-                        <div class="info-card">
-                            <h3><i class="fas fa-briefcase"></i> DÉBOUCHÉS PROFESSIONNELS</h3>
-                            <ul style="margin-left: 20px;">
-                                <li>Product Designer</li>
-                                <li>UX/UI Designer</li>
-                                <li>Product Manager</li>
-                                <li>UX Researcher</li>
-                                <li>DesignOps Manager</li>
-                                <li>Product Owner</li>
-                                <li>Service Designer</li>
-                            </ul>
-                        </div>
-
-                        <div class="info-card">
-                            <h3><i class="fas fa-handshake"></i> PARTENAIRES ESODI</h3>
-                            <p>Le Cabinet ESODI collabore avec :</p>
-                            <ul style="margin-left: 20px;">
-                                <li>Entreprises locales et internationales</li>
-                                <li>Institutions académiques</li>
-                                <li>Incubateurs et accélérateurs</li>
-                                <li>Organismes de certification</li>
-                                <li>Experts internationaux en design produit</li>
-                            </ul>
-                        </div>
-
-                        <div class="info-card">
-                            <h3><i class="fas fa-phone-alt"></i> CONTACT CABINET ESODI</h3>
-                            <p><strong><i class="fab fa-whatsapp"></i> WhatsApp :</strong> +228 92 87 16 05</p>
-                            <p><strong><i class="fas fa-envelope"></i> Email :</strong> esodi.formation@pro.tg</p>
-                            <p><strong><i class="fas fa-map-marker-alt"></i> Siège :</strong> Lomé, Togo</p>
-                            <p><strong><i class="fas fa-user-tie"></i> Directeur :</strong> KOLA Maniwah Essohouna</p>
-                        </div>
-
-                        <div class="info-card">
-                            <h3><i class="fas fa-calendar-check"></i> PROCHAINES ÉTAPES</h3>
-                            <ol style="margin-left: 20px;">
-                                <li>Entretien de sélection avec le comité ESODI</li>
-                                <li>Test d'aptitude en conception produit</li>
-                                <li>Présentation du programme détaillé</li>
-                                <li>Signature du contrat de formation</li>
-                                <li>Début de la formation (date à confirmer)</li>
-                            </ol>
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Candidature enregistrée avec succès !</h3>
+                            <p>Veuillez maintenant envoyer votre candidature via WhatsApp pour finaliser l'inscription.</p>
                         </div>
                     </div>
+                </div>
 
-                    <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(0, 106, 78, 0.1); border-radius: var(--border-radius);">
-                        <p style="color: var(--togo-yellow); font-size: 1.1rem; font-weight: 600;">
-                            <i class="fas fa-quote-left"></i>
-                            Transformer vos compétences, façonner votre avenir digital
-                            <i class="fas fa-quote-right"></i>
+                <!-- Access File Tab -->
+                <div class="tab-content" id="access">
+                    <!-- Verification Section -->
+                    <div class="access-file-section" id="verificationSection">
+                        <h3><i class="fas fa-file-alt"></i> Accès au Fichier ESODI.html</h3>
+                        <p>Accédez au fichier ESODI.html après avoir soumis votre candidature ESODI</p>
+                        
+                        <div class="form-group" style="margin: 20px 0;">
+                            <label for="verificationCode"><i class="fas fa-shield-alt"></i> Code de Vérification</label>
+                            <input type="text" id="verificationCode" class="form-control" placeholder="Entrez le code de vérification" style="max-width: 300px; margin: 0 auto;">
+                        </div>
+                        
+                        <button id="verifyCodeBtn" class="access-btn">
+                            <i class="fas fa-check-circle"></i> Vérifier le Code
+                        </button>
+                        
+                        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--togo-yellow);">
+                            <i class="fas fa-info-circle"></i> Le code de vérification vous sera envoyé après l'envoi de votre candidature WhatsApp
                         </p>
-                        <p style="margin-top: 10px;">© 2023 Cabinet ESODI - Excellence en Formation Digitale</p>
+                    </div>
+
+                    <!-- Access Granted Section -->
+                    <div class="access-granted-section" id="accessGrantedSection">
+                        <div class="access-granted-header">
+                            <h3><i class="fas fa-unlock-alt"></i> ACCÈS AUTORISÉ</h3>
+                            <p>Votre code de vérification a été validé avec succès</p>
+                            <p style="color: var(--success); margin-top: 10px;">
+                                <i class="fas fa-save"></i> Code sauvegardé pour vos prochains accès
+                            </p>
+                        </div>
+
+                        <a href="ESODI.html" target="_blank" class="esodi-file-btn">
+                            <i class="fas fa-external-link-alt"></i> Accéder au Fichier ESODI.html
+                        </a>
+
+                        <div class="code-saved-info">
+                            <p>
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Code sauvegardé : <strong id="savedCodeDisplay"></strong></span>
+                            </p>
+                        </div>
+
+                        <p style="margin-top: 20px; color: var(--gray);">
+                            <i class="fas fa-info-circle"></i> Vous pouvez maintenant accéder au fichier ESODI.html à tout moment
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1237,18 +1134,73 @@
         const successMessage = document.getElementById('successMessage');
         const whatsappSection = document.getElementById('whatsappSection');
         const whatsappBtn = document.getElementById('whatsappBtn');
-        const accessFileBtn = document.getElementById('accessFileBtn');
+        const verifyCodeBtn = document.getElementById('verifyCodeBtn');
         const verificationCodeInput = document.getElementById('verificationCode');
+        const verificationSection = document.getElementById('verificationSection');
+        const accessGrantedSection = document.getElementById('accessGrantedSection');
+        const savedCodeDisplay = document.getElementById('savedCodeDisplay');
         const loadingOverlay = document.getElementById('loadingOverlay');
-        const platformMain = document.getElementById('platformMain');
-        const essodidiContent = document.getElementById('essodidiContent');
-        const backBtn = document.getElementById('backBtn');
-        const candidateInfo = document.getElementById('candidateInfo');
 
         // Variables pour les données
         let esodiFormData = null;
         let whatsappSent = false;
         let verificationCode = null;
+        let savedVerificationCode = null;
+
+        // Constantes pour le stockage
+        const STORAGE_KEYS = {
+            VERIFICATION_CODE: 'esodi_verification_code',
+            WHATSAPP_SENT: 'esodi_whatsapp_sent',
+            FORM_DATA: 'esodi_form_data',
+            ACCESS_GRANTED: 'esodi_access_granted'
+        };
+
+        // Initialisation au chargement
+        window.addEventListener('load', function() {
+            // Vérifier la connexion
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const savedUsername = localStorage.getItem('username');
+            
+            if (isLoggedIn === 'true' && savedUsername === VALID_USERNAME) {
+                loginContainer.style.display = 'none';
+                mainPlatform.style.display = 'block';
+            }
+            
+            // Charger les données sauvegardées
+            loadSavedData();
+            
+            // Générer un code de vérification si nécessaire
+            verificationCode = generateVerificationCode();
+            
+            // Vérifier si l'accès a déjà été accordé
+            checkAccessStatus();
+        });
+
+        // Charger les données sauvegardées
+        function loadSavedData() {
+            savedVerificationCode = localStorage.getItem(STORAGE_KEYS.VERIFICATION_CODE);
+            whatsappSent = localStorage.getItem(STORAGE_KEYS.WHATSAPP_SENT) === 'true';
+            
+            const savedFormData = localStorage.getItem(STORAGE_KEYS.FORM_DATA);
+            if (savedFormData) {
+                esodiFormData = JSON.parse(savedFormData);
+            }
+            
+            if (savedVerificationCode) {
+                console.log('Code de vérification sauvegardé:', savedVerificationCode);
+            }
+        }
+
+        // Vérifier le statut d'accès
+        function checkAccessStatus() {
+            const accessGranted = localStorage.getItem(STORAGE_KEYS.ACCESS_GRANTED) === 'true';
+            
+            if (accessGranted && savedVerificationCode) {
+                // Accès déjà accordé
+                showAccessGrantedSection();
+                savedCodeDisplay.textContent = savedVerificationCode;
+            }
+        }
 
         // Gestion de la connexion
         loginForm.addEventListener('submit', function(e) {
@@ -1286,26 +1238,11 @@
                 
                 loginForm.reset();
                 resetESODIForm();
-                showPlatformMain();
                 
                 mainPlatform.style.display = 'none';
                 loginContainer.style.display = 'flex';
                 errorMessage.style.display = 'none';
             }, 500);
-        });
-
-        // Vérifier si l'utilisateur est déjà connecté
-        window.addEventListener('load', function() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
-            const savedUsername = localStorage.getItem('username');
-            
-            if (isLoggedIn === 'true' && savedUsername === VALID_USERNAME) {
-                loginContainer.style.display = 'none';
-                mainPlatform.style.display = 'block';
-            }
-            
-            // Générer un code de vérification aléatoire
-            verificationCode = generateVerificationCode();
         });
 
         // Gestion des onglets
@@ -1325,6 +1262,11 @@
                         content.classList.add('active');
                     }
                 });
+                
+                // Vérifier le statut d'accès lors de l'ouverture de l'onglet
+                if (tabId === 'access') {
+                    checkAccessStatus();
+                }
             });
         });
 
@@ -1366,10 +1308,9 @@
                 verificationCode: verificationCode
             };
             
-            // Sauvegarder dans localStorage
-            let registrations = JSON.parse(localStorage.getItem('esodi_registrations')) || [];
-            registrations.push(esodiFormData);
-            localStorage.setItem('esodi_registrations', JSON.stringify(registrations));
+            // Sauvegarder les données
+            localStorage.setItem(STORAGE_KEYS.FORM_DATA, JSON.stringify(esodiFormData));
+            localStorage.setItem(STORAGE_KEYS.VERIFICATION_CODE, verificationCode);
             
             // Afficher les sections
             successMessage.style.display = 'block';
@@ -1378,7 +1319,6 @@
             // Scroller vers la section WhatsApp
             whatsappSection.scrollIntoView({ behavior: 'smooth' });
             
-            // Afficher dans la console
             console.log('Nouvelle inscription ESODI:', esodiFormData);
             console.log('Code de vérification:', verificationCode);
         });
@@ -1398,19 +1338,19 @@
             // Ouvrir WhatsApp
             window.open(whatsappLink, '_blank');
             
-            // Marquer comme envoyé
+            // Marquer comme envoyé et sauvegarder
             whatsappSent = true;
-            localStorage.setItem('whatsappSent', 'true');
+            localStorage.setItem(STORAGE_KEYS.WHATSAPP_SENT, 'true');
             
             // Afficher confirmation avec code
-            alert(`✅ Votre candidature a été envoyée au Cabinet ESODI.\n\n🔐 Code de vérification: ${verificationCode}\n\nUtilisez ce code pour accéder au contenu ESSODIDI.`);
+            alert(`✅ Votre candidature a été envoyée au Cabinet ESODI.\n\n🔐 Code de vérification: ${verificationCode}\n\nUtilisez ce code pour accéder au fichier ESODI.html.`);
             
             // Rediriger vers l'onglet accès
             document.querySelector('[data-tab="access"]').click();
         });
 
-        // Gestion de l'accès au contenu ESSODIDI
-        accessFileBtn.addEventListener('click', function() {
+        // Gestion de la vérification du code
+        verifyCodeBtn.addEventListener('click', function() {
             const enteredCode = verificationCodeInput.value.trim();
             
             if (!esodiFormData) {
@@ -1425,36 +1365,31 @@
                 return;
             }
             
-            if (enteredCode === verificationCode) {
+            // Vérifier le code
+            if (enteredCode === verificationCode || enteredCode === savedVerificationCode) {
                 showLoading();
                 
                 setTimeout(() => {
                     hideLoading();
                     
-                    // Afficher le contenu ESSODIDI
-                    displayESSODIDIContent(esodiFormData);
+                    // Sauvegarder le code pour les prochains accès
+                    localStorage.setItem(STORAGE_KEYS.VERIFICATION_CODE, enteredCode);
+                    localStorage.setItem(STORAGE_KEYS.ACCESS_GRANTED, 'true');
                     
-                    // Cacher la plateforme principale
-                    showESSODIDIContent();
+                    // Afficher la section d'accès accordé
+                    showAccessGrantedSection();
+                    savedCodeDisplay.textContent = enteredCode;
                     
-                    // Réinitialiser le code
+                    // Réinitialiser le champ de saisie
                     verificationCodeInput.value = '';
-                    verificationCode = generateVerificationCode();
+                    
+                    // Afficher confirmation
+                    alert('✅ Code vérifié avec succès !\n\nL\'accès au fichier ESODI.html vous est maintenant accordé.\n\nLe code a été sauvegardé pour vos prochains accès.');
                 }, 1000);
             } else {
                 alert('❌ Code de vérification incorrect. Veuillez réessayer.');
                 verificationCodeInput.value = '';
             }
-        });
-
-        // Gestion du retour à la plateforme
-        backBtn.addEventListener('click', function() {
-            showLoading();
-            
-            setTimeout(() => {
-                hideLoading();
-                showPlatformMain();
-            }, 500);
         });
 
         // Fonctions utilitaires
@@ -1484,6 +1419,13 @@ _Formation Conception Produits Digitaux - Cabinet ESODI_`;
         }
 
         function generateVerificationCode() {
+            // Vérifier d'abord si un code existe déjà
+            const savedCode = localStorage.getItem(STORAGE_KEYS.VERIFICATION_CODE);
+            if (savedCode) {
+                return savedCode;
+            }
+            
+            // Sinon générer un nouveau code
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
             let code = '';
             for (let i = 0; i < 8; i++) {
@@ -1492,62 +1434,14 @@ _Formation Conception Produits Digitaux - Cabinet ESODI_`;
             return 'ESODI-' + code;
         }
 
-        function displayESSODIDIContent(data) {
-            // Formater les informations du candidat
-            const candidateHTML = `
-                <p><strong>Nom:</strong> ${data.fullName}</p>
-                <p><strong>Email:</strong> ${data.email}</p>
-                <p><strong>Téléphone:</strong> ${data.phone}</p>
-                <p><strong>Profession:</strong> ${data.profession}</p>
-                <p><strong>Niveau d'étude:</strong> ${getEducationLevel(data.education)}</p>
-                <p><strong>Formation choisie:</strong> ${getFormationName(data.formation)}</p>
-                <p><strong>Date de soumission:</strong> ${data.submissionDate}</p>
-                <p><strong>Code de vérification:</strong> ${data.verificationCode}</p>
-            `;
-            
-            candidateInfo.innerHTML = candidateHTML;
+        function showAccessGrantedSection() {
+            verificationSection.style.display = 'none';
+            accessGrantedSection.style.display = 'block';
         }
 
-        function getEducationLevel(code) {
-            const levels = {
-                'bac': 'Baccalauréat',
-                'licence': 'Licence',
-                'master': 'Master',
-                'doctorat': 'Doctorat',
-                'autre': 'Autre'
-            };
-            return levels[code] || code;
-        }
-
-        function getFormationName(code) {
-            const formations = {
-                'uiux': 'Design UI/UX Avancé',
-                'webdev': 'Développement Web Fullstack',
-                'mobile': 'Développement Mobile',
-                'digital': 'Marketing Digital & SEO',
-                'product': 'Gestion de Produit Digital',
-                'data': 'Data Science & Analytics'
-            };
-            return formations[code] || code;
-        }
-
-        function showESSODIDIContent() {
-            platformMain.style.display = 'none';
-            essodidiContent.style.display = 'block';
-            
-            // Scroller vers le haut
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function showPlatformMain() {
-            essodidiContent.style.display = 'none';
-            platformMain.style.display = 'block';
-            
-            // Réinitialiser l'onglet actif
-            document.querySelector('[data-tab="tools"]').click();
-            
-            // Scroller vers le haut
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function showVerificationSection() {
+            accessGrantedSection.style.display = 'none';
+            verificationSection.style.display = 'block';
         }
 
         function resetESODIForm() {
@@ -1556,6 +1450,11 @@ _Formation Conception Produits Digitaux - Cabinet ESODI_`;
             whatsappSection.style.display = 'none';
             esodiFormData = null;
             whatsappSent = false;
+            localStorage.removeItem(STORAGE_KEYS.WHATSAPP_SENT);
+            localStorage.removeItem(STORAGE_KEYS.FORM_DATA);
+            localStorage.removeItem(STORAGE_KEYS.ACCESS_GRANTED);
+            showVerificationSection();
+            verificationCode = generateVerificationCode();
         }
 
         function showLoading() {
@@ -1565,14 +1464,6 @@ _Formation Conception Produits Digitaux - Cabinet ESODI_`;
         function hideLoading() {
             loadingOverlay.style.display = 'none';
         }
-
-        // Vérifier si WhatsApp a déjà été envoyé
-        window.addEventListener('load', function() {
-            const sent = localStorage.getItem('whatsappSent');
-            if (sent === 'true') {
-                whatsappSent = true;
-            }
-        });
     </script>
 </body>
 </html>
