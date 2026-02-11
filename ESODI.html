@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>WebDev Platform | KOLA Maniwah Essohouna</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
@@ -27,9 +27,9 @@
             --success: #2ecc71;
             --warning: var(--togo-yellow);
             --danger: var(--togo-red);
-            --border-radius: 10px;
-            --box-shadow: 0 5px 15px rgba(0, 106, 78, 0.15);
-            --transition: all 0.3s ease;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 106, 78, 0.12);
+            --transition: all 0.25s ease;
         }
 
         * {
@@ -44,8 +44,8 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--dark) 0%, #0d2c1f 100%);
-            color: var(--light);
+            background: linear-gradient(145deg, #f6f3f0 0%, #eae6e0 100%);
+            color: var(--dark);
             line-height: 1.5;
             min-height: 100vh;
             overflow-x: hidden;
@@ -61,28 +61,30 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 106, 78, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 206, 0, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(210, 16, 52, 0.03) 0%, transparent 30%);
+                radial-gradient(circle at 10% 20%, rgba(0, 106, 78, 0.03) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(255, 206, 0, 0.03) 0%, transparent 25%),
+                radial-gradient(circle at 50% 50%, rgba(210, 16, 52, 0.02) 0%, transparent 30%);
             pointer-events: none;
             z-index: -1;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
             width: 100%;
         }
 
-        /* Header & Navigation - COMPACT */
+        /* Header compact */
         header {
             padding: 20px 0;
             position: relative;
             z-index: 100;
-            background: rgba(10, 26, 20, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--togo-yellow);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 3px solid var(--togo-yellow);
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 25px;
         }
 
         .header-content {
@@ -95,22 +97,23 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .logo-icon {
-            background: linear-gradient(135deg, var(--togo-green), var(--togo-yellow));
-            width: 50px;
-            height: 50px;
+            background: linear-gradient(145deg, var(--togo-green), var(--togo-red));
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             box-shadow: var(--box-shadow);
-            border: 2px solid var(--togo-white);
+            border: 2px solid var(--togo-yellow);
             position: relative;
             overflow: hidden;
+            color: white;
         }
 
         .logo-icon::after {
@@ -124,51 +127,39 @@
         }
 
         .logo-text h1 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(90deg, var(--togo-green), var(--togo-yellow), var(--togo-red));
+            background: linear-gradient(135deg, var(--togo-green), var(--togo-red));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .logo-text p {
             font-size: 0.8rem;
-            color: var(--togo-yellow);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            color: var(--togo-red);
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
-        /* Founder Info avec style togolais - COMPACT */
+        /* Badge formateur compact */
         .founder-info {
-            background: linear-gradient(135deg, rgba(0, 106, 78, 0.9), rgba(0, 106, 78, 0.7));
-            border-radius: var(--border-radius);
-            padding: 12px 18px;
-            border-left: 4px solid var(--togo-yellow);
-            border-right: 4px solid var(--togo-red);
+            background: linear-gradient(145deg, var(--togo-green), #00503b);
+            border-radius: 60px;
+            padding: 12px 22px;
+            border: 2px solid var(--togo-yellow);
             backdrop-filter: blur(5px);
             position: relative;
             overflow: hidden;
-            max-width: 350px;
-        }
-
-        .founder-info::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--togo-green), var(--togo-yellow), var(--togo-red));
+            max-width: 380px;
+            box-shadow: 0 8px 18px rgba(0,106,78,0.2);
         }
 
         .founder-info h3 {
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-            color: var(--togo-white);
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: white;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -181,100 +172,71 @@
 
         .founder-info p {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
             display: flex;
             align-items: center;
-            gap: 6px;
-            margin-bottom: 3px;
+            gap: 8px;
+            margin-bottom: 2px;
         }
 
         .founder-info p i {
             color: var(--togo-yellow);
         }
 
-        /* Main Content */
-        .main-content {
-            padding: 30px 0 60px;
-        }
-
+        /* Introduction */
         .platform-intro {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            position: relative;
+            max-width: 800px;
+            margin: 0 auto 35px;
         }
 
         .platform-intro h2 {
             font-size: 2.2rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 800;
-            line-height: 1.2;
-            position: relative;
-            display: inline-block;
         }
 
         .platform-intro h2 span {
-            background: linear-gradient(90deg, var(--togo-green), var(--togo-yellow), var(--togo-red));
+            background: linear-gradient(135deg, var(--togo-green), var(--togo-red));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            position: relative;
-        }
-
-        .platform-intro h2::after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            left: 25%;
-            width: 50%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--togo-green), var(--togo-yellow), var(--togo-red));
-            border-radius: 2px;
         }
 
         .platform-intro p {
             font-size: 1rem;
-            color: var(--togo-yellow);
-            line-height: 1.6;
+            color: var(--dark);
             font-weight: 500;
-            margin-top: 15px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            background: rgba(255,206,0,0.15);
+            padding: 10px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            border: 1px solid var(--togo-yellow);
         }
 
-        /* Tabs Navigation avec style africain - COMPACT */
+        /* ---------- ONGLETS MODERNES, COMPACTS, STYLE TOGO ---------- */
         .tabs-navigation {
             display: flex;
-            background: var(--dark-light);
-            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 80px;
             padding: 6px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             flex-wrap: wrap;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
             border: 2px solid var(--togo-yellow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tabs-navigation::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--togo-green), var(--togo-yellow), var(--togo-red));
         }
 
         .tab-btn {
-            flex: 1;
-            min-width: 150px;
-            padding: 15px 20px;
+            flex: 1 1 auto;
+            min-width: 140px;
+            padding: 14px 16px;
             background: transparent;
             border: none;
-            color: var(--gray);
+            color: #2c4a3e;
             font-size: 0.95rem;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 60px;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
@@ -282,30 +244,29 @@
             justify-content: center;
             gap: 10px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid transparent;
         }
 
         .tab-btn:hover {
-            color: var(--togo-yellow);
-            background: rgba(0, 106, 78, 0.1);
+            background: rgba(0, 106, 78, 0.08);
+            color: var(--togo-green);
         }
 
         .tab-btn.active {
-            background: linear-gradient(135deg, var(--togo-green), var(--togo-red));
+            background: linear-gradient(145deg, var(--togo-green), #0a5a40);
             color: white;
-            box-shadow: 0 4px 12px rgba(0, 106, 78, 0.4);
-            border: 2px solid var(--togo-yellow);
+            box-shadow: 0 6px 14px rgba(0,106,78,0.3);
+            border: 1px solid var(--togo-yellow);
         }
 
         .tab-btn i {
             font-size: 1.2rem;
         }
 
-        /* Tab Content */
+        /* Contenu des onglets */
         .tab-content {
             display: none;
-            animation: fadeIn 0.5s ease forwards;
+            animation: fadeIn 0.4s ease forwards;
         }
 
         .tab-content.active {
@@ -313,80 +274,71 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .tab-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 20px;
             margin-bottom: 30px;
             flex-wrap: wrap;
-            gap: 15px;
-            padding: 20px;
-            background: rgba(0, 106, 78, 0.1);
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--togo-yellow);
+            padding: 15px 20px;
+            background: white;
+            border-radius: 60px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #ffe6b3;
         }
 
         .tab-title {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            color: var(--togo-yellow);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: var(--togo-green);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .tab-title i {
-            margin-right: 15px;
             color: var(--togo-red);
             background: var(--togo-yellow);
             padding: 10px;
             border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(255, 206, 0, 0.3);
         }
 
-        .tab-description {
-            font-size: 0.95rem;
-            color: var(--light);
-            max-width: 600px;
-            line-height: 1.6;
-            background: rgba(0, 106, 78, 0.2);
-            padding: 15px;
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 206, 0, 0.3);
-        }
-
-        /* Buttons Grid avec motifs africains - BOUTONS COMPACTS */
+        /* Grille de boutons COMPACTE */
         .buttons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 15px;
         }
 
+        /* Cards outils compactes */
         .tool-card {
-            background: linear-gradient(145deg, var(--dark-light), #15281f);
-            border-radius: var(--border-radius);
-            padding: 20px;
+            background: white;
+            border-radius: 24px;
+            padding: 18px 18px;
             transition: var(--transition);
-            border: 2px solid rgba(0, 106, 78, 0.3);
+            border: 2px solid rgba(0, 106, 78, 0.1);
             display: flex;
             flex-direction: column;
-            height: 100%;
             position: relative;
             overflow: hidden;
             text-decoration: none;
             color: inherit;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.02);
             cursor: pointer;
-            min-height: 180px;
+            min-height: 170px;
+            backdrop-filter: blur(4px);
         }
 
         .tool-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 106, 78, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 28px -8px rgba(0,106,78,0.2);
             border-color: var(--togo-yellow);
+            background: #fffdf9;
         }
 
         .tool-card::before {
@@ -395,196 +347,91 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, var(--togo-green), var(--togo-yellow), var(--togo-red));
         }
 
-        .tool-card::after {
-            content: "✻";
-            position: absolute;
-            bottom: 8px;
-            right: 12px;
-            color: rgba(255, 206, 0, 0.1);
-            font-size: 1.5rem;
-            font-family: serif;
-        }
-
         .tool-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, var(--togo-green), var(--togo-red));
-            color: var(--togo-white);
-            box-shadow: 0 6px 15px rgba(0, 106, 78, 0.3);
-            border: 2px solid var(--togo-yellow);
-            position: relative;
-            z-index: 2;
-        }
-
-        .tool-icon::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 1px dashed var(--togo-yellow);
-            animation: spin 20s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .tool-card:hover .tool-icon {
-            background: linear-gradient(135deg, var(--togo-red), var(--togo-yellow));
-            transform: rotate(10deg) scale(1.1);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            background: linear-gradient(145deg, var(--togo-green), #0a5a40);
+            color: white;
+            box-shadow: 0 5px 12px rgba(0,106,78,0.2);
+            border: 1px solid var(--togo-yellow);
         }
 
         .tool-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--togo-yellow);
+            margin-bottom: 6px;
+            color: var(--togo-green);
             display: flex;
             align-items: center;
-            gap: 8px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            gap: 6px;
         }
 
         .tool-description {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 15px;
+            color: #2c4a3e;
+            margin-bottom: 10px;
             flex-grow: 1;
-            line-height: 1.5;
-            font-size: 0.85rem;
-            background: rgba(0, 106, 78, 0.1);
-            padding: 10px;
-            border-radius: 6px;
-            border-left: 2px solid var(--togo-yellow);
-        }
-
-        /* LIENS CACHÉS - invisible pour l'utilisateur */
-        .hidden-link {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            height: 0 !important;
-            width: 0 !important;
-            position: absolute !important;
-            pointer-events: none !important;
+            line-height: 1.4;
+            font-size: 0.8rem;
+            background: rgba(0,106,78,0.03);
+            padding: 8px 10px;
+            border-radius: 12px;
+            border-left: 3px solid var(--togo-yellow);
         }
 
         .tool-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
+            gap: 6px;
+            margin-top: 5px;
         }
 
         .tool-tag {
-            background: linear-gradient(135deg, var(--togo-green), var(--togo-red));
-            color: var(--togo-white);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            background: #f0f7f4;
+            color: var(--togo-green);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
             font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
             border: 1px solid var(--togo-yellow);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .tool-tag.frontend { background: linear-gradient(135deg, #006A4E, #2ecc71); }
-        .tool-tag.backend { background: linear-gradient(135deg, #D21034, #e74c3c); }
-        .tool-tag.database { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
-        .tool-tag.security { background: linear-gradient(135deg, #006A4E, #3498db); }
-        .tool-tag.hosting { background: linear-gradient(135deg, #D21034, #FFCE00); }
-        .tool-tag.pwa { background: linear-gradient(135deg, #FFCE00, #D21034); }
-        .tool-tag.editor { background: linear-gradient(135deg, #006A4E, #27ae60); }
-        .tool-tag.versioning { background: linear-gradient(135deg, #333, #666); }
-        .tool-tag.forms { background: linear-gradient(135deg, #3498db, #2980b9); }
-        .tool-tag.ai { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-
-        /* Featured Card */
-        .featured-card {
-            position: relative;
-            border: 2px solid var(--togo-yellow);
-            background: linear-gradient(145deg, rgba(0, 106, 78, 0.2), rgba(210, 16, 52, 0.1));
         }
 
         .featured-badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: linear-gradient(135deg, var(--togo-red), var(--togo-yellow));
+            background: linear-gradient(145deg, var(--togo-red), #b30e2d);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.7rem;
             font-weight: 700;
-            z-index: 2;
-            box-shadow: 0 3px 10px rgba(210, 16, 52, 0.4);
-            border: 1px solid white;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            border: 1px solid var(--togo-yellow);
+            box-shadow: 0 3px 8px rgba(210,16,52,0.3);
         }
 
-        /* Category Section */
-        .category-section {
-            margin-bottom: 40px;
+        /* Lien caché pour le clic */
+        .hidden-link {
+            display: none;
         }
 
-        .category-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--togo-yellow);
-            color: var(--togo-yellow);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .category-title::after {
-            content: "✦";
-            position: absolute;
-            right: 0;
-            color: rgba(255, 206, 0, 0.3);
-            font-size: 1.8rem;
-        }
-
-        .category-title i {
-            color: var(--togo-red);
-            background: var(--togo-yellow);
-            padding: 10px;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(255, 206, 0, 0.4);
-        }
-
-        /* Footer avec style africain - COMPACT */
+        /* Footer compact */
         footer {
-            background: linear-gradient(135deg, var(--togo-green), #00563b);
-            padding: 40px 0 20px;
+            background: linear-gradient(145deg, var(--togo-green), #004c39);
+            padding: 35px 0 20px;
             margin-top: 60px;
+            border-radius: 40px 40px 0 0;
             position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--togo-green), var(--togo-yellow), var(--togo-red));
+            border-top: 4px solid var(--togo-yellow);
         }
 
         .footer-content {
@@ -593,281 +440,92 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 25px;
+            color: white;
         }
 
         .footer-logo h3 {
             font-size: 1.4rem;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, var(--togo-yellow), var(--togo-white));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 700;
+            color: var(--togo-yellow);
+            margin-bottom: 8px;
         }
 
         .footer-logo p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.85rem;
-            max-width: 250px;
-            line-height: 1.5;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.8rem;
+            max-width: 280px;
         }
 
         .footer-info {
-            text-align: right;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 18px;
-            border-radius: var(--border-radius);
+            background: rgba(0,0,0,0.15);
+            padding: 18px 22px;
+            border-radius: 30px;
             border-left: 4px solid var(--togo-yellow);
-            max-width: 300px;
+            max-width: 320px;
         }
 
         .footer-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
             color: var(--togo-yellow);
-            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .footer-info p {
-            color: rgba(255, 255, 255, 0.95);
             font-size: 0.8rem;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            gap: 6px;
-        }
-
-        .footer-info p strong {
-            color: var(--togo-yellow);
-            font-size: 0.9rem;
+            gap: 8px;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 206, 0, 0.3);
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.85rem;
-            position: relative;
+            padding-top: 25px;
+            margin-top: 25px;
+            border-top: 1px solid rgba(255,206,0,0.3);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8rem;
         }
 
-        .copyright::before {
-            content: "🇹🇬";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.2rem;
-            background: var(--togo-red);
-            padding: 4px 12px;
-            border-radius: 15px;
-            border: 1px solid var(--togo-yellow);
+        /* Responsive parfait */
+        @media (max-width: 1100px) {
+            .buttons-grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .buttons-grid {
-                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-            }
-            
-            .platform-intro h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-            
-            .logo {
-                justify-content: center;
-            }
-            
-            .founder-info {
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-            
-            .tab-btn {
-                min-width: 140px;
-            }
-            
-            .tab-title {
-                font-size: 1.6rem;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-info {
-                text-align: center;
-                max-width: 100%;
-            }
-            
-            .footer-info p {
-                justify-content: center;
-            }
+        @media (max-width: 900px) {
+            .header-content { flex-direction: column; gap: 15px; }
+            .founder-info { max-width: 100%; }
+            .tab-btn { min-width: 120px; padding: 12px 10px; font-size: 0.85rem; }
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 0 12px;
-            }
-            
-            .tabs-navigation {
-                flex-direction: column;
-            }
-            
-            .tab-btn {
-                min-width: 100%;
-                padding: 12px;
-                font-size: 0.9rem;
-            }
-            
-            .buttons-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 15px;
-            }
-            
-            .platform-intro h2 {
-                font-size: 1.7rem;
-            }
-            
-            .platform-intro p {
-                font-size: 0.9rem;
-            }
-            
-            .tab-header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px;
-            }
-            
-            .tab-title {
-                font-size: 1.4rem;
-            }
-            
-            .tab-description {
-                font-size: 0.85rem;
-                padding: 12px;
-            }
+            .tabs-navigation { flex-direction: column; border-radius: 30px; }
+            .tab-btn { width: 100%; }
+            .buttons-grid { grid-template-columns: 1fr; }
+            .tab-title { font-size: 1.3rem; }
+            .platform-intro h2 { font-size: 1.8rem; }
         }
 
         @media (max-width: 480px) {
-            .logo {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .logo-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.2rem;
-            }
-            
-            .platform-intro h2 {
-                font-size: 1.5rem;
-            }
-            
-            .tab-title {
-                font-size: 1.3rem;
-            }
-            
-            .tool-card {
-                padding: 15px;
-                min-height: 160px;
-            }
-            
-            .tool-title {
-                font-size: 1.1rem;
-            }
-            
-            .tool-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.4rem;
-                margin-bottom: 12px;
-            }
-            
-            .tool-description {
-                font-size: 0.8rem;
-                padding: 8px;
-            }
-            
-            .buttons-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .category-title {
-                font-size: 1.3rem;
-            }
+            .logo { flex-direction: column; text-align: center; }
+            .logo-text h1 { font-size: 1.3rem; }
+            .tool-card { min-height: 160px; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-info { text-align: center; }
+            .footer-info p { justify-content: center; }
         }
 
-        /* Mobile Menu Toggle */
-        .mobile-menu-toggle {
-            display: none;
-            background: var(--togo-yellow);
-            border: none;
-            color: var(--togo-green);
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(255, 206, 0, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-                position: absolute;
-                right: 15px;
-                top: 20px;
-            }
-            
-            .tabs-navigation {
-                display: none;
-            }
-            
-            .tabs-navigation.active {
-                display: flex;
-            }
-        }
-
-        /* Scrollbar Styling avec couleurs togolaises */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--togo-green), var(--togo-yellow), var(--togo-red));
-            border-radius: 5px;
-            border: 2px solid var(--dark);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, var(--togo-red), var(--togo-yellow), var(--togo-green));
-        }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1edea; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(var(--togo-green), var(--togo-red)); border-radius: 5px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- Header avec formateur -->
         <header>
             <div class="header-content">
                 <div class="logo">
@@ -875,358 +533,278 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>WebDev Platform Togo</h1>
-                        <p><i class="fas fa-map-marker-alt"></i> Lomé • Dev • Host • Design</p>
+                        <h1>WebDev Togo</h1>
+                        <p><i class="fas fa-map-marker-alt"></i> Lomé · Dev · Formation</p>
                     </div>
                 </div>
                 
                 <div class="founder-info">
                     <h3><i class="fas fa-user-tie"></i> KOLA Maniwah Essohouna</h3>
                     <p><i class="fas fa-chalkboard-teacher"></i> Enseignant Mathématiques</p>
-                    <p><i class="fas fa-laptop-code"></i> Ingénieur Développement Web</p>
+                    <p><i class="fas fa-laptop-code"></i> Ingénieur Développement Web & Mobile</p>
                 </div>
             </div>
-            
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
         </header>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main>
             <div class="platform-intro">
-                <h2>Dev Web <span>Plateforme</span> <span style="color: var(--togo-red)">🇹🇬</span></h2>
-                <p>Solution innovante conçue au Togo pour le développement web moderne.</p>
+                <h2><span>Dev Atelier</span> 🇹🇬</h2>
+                <p>Plateforme de ressources · Outils & liens essentiels</p>
             </div>
 
-            <!-- Tabs Navigation -->
-            <div class="tabs-navigation" id="tabsNavigation">
+            <!-- Tabs Navigation avec 4 ONGLETS dont DEV ATELIER -->
+            <div class="tabs-navigation">
                 <button class="tab-btn active" data-tab="coding">
-                    <i class="fas fa-code"></i>
-                    <span>Codage</span>
+                    <i class="fas fa-code"></i> Codage
                 </button>
                 <button class="tab-btn" data-tab="hosting">
-                    <i class="fas fa-server"></i>
-                    <span>Hébergement</span>
+                    <i class="fas fa-server"></i> Hébergement
                 </button>
                 <button class="tab-btn" data-tab="design">
-                    <i class="fas fa-paint-brush"></i>
-                    <span>Conception WPA</span>
+                    <i class="fas fa-paint-brush"></i> Conception
+                </button>
+                <!-- NOUVEL ONGLET : DEV ATELIER - donne accès au fichier outils de travail.html -->
+                <button class="tab-btn" data-tab="atelier">
+                    <i class="fas fa-toolbox"></i> Dev Atelier
                 </button>
             </div>
 
-            <!-- Coding Tab - BOUTONS COMPACTS -->
+            <!-- Onglet CODAGE (liens existants) -->
             <div class="tab-content active" id="coding">
                 <div class="tab-header">
                     <h2 class="tab-title"><i class="fas fa-code"></i> Codage</h2>
-                    <p class="tab-description">Outils de développement web avec innovation togolaise pour applications performantes.</p>
+                    <span style="background: var(--togo-yellow); padding: 8px 18px; border-radius: 30px; font-weight: 600; color: var(--togo-green);">8 outils essentiels</span>
                 </div>
-                
                 <div class="buttons-grid">
-                    <!-- HTML Online Viewer - COMPACT -->
-                    <div class="tool-card featured-card" data-link="https://html.onlineviewer.net/">
-                        <div class="featured-badge">Top</div>
-                        <div class="tool-icon">
-                            <i class="fab fa-html5"></i>
-                        </div>
-                        <h3 class="tool-title">HTML Viewer</h3>
-                        <p class="tool-description">Visualiseur HTML en ligne pour prévisualiser code directement dans le navigateur.</p>
-                        <a href="https://html.onlineviewer.net/" target="_blank" class="hidden-link"></a>
-                        <div class="tool-tags">
-                            <span class="tool-tag editor">Éditeur</span>
-                            <span class="tool-tag">🇹🇬</span>
-                        </div>
+                    <!-- WebCode.run -->
+                    <div class="tool-card" data-link="https://webcode.run/">
+                        <div class="tool-icon"><i class="fas fa-bolt"></i></div>
+                        <h3 class="tool-title">WebCode.run</h3>
+                        <p class="tool-description">Éditeur web instantané, aperçu en direct HTML/CSS/JS</p>
+                        <a href="https://webcode.run/" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">Éditeur</span><span class="tool-tag">⚡</span></div>
                     </div>
-                    
-                    <!-- GitHub - COMPACT -->
-                    <div class="tool-card" data-link="https://github.com/login">
-                        <div class="tool-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3 class="tool-title">GitHub</h3>
-                        <p class="tool-description">Plateforme collaborative pour contrôle de version et travail d'équipe.</p>
-                        <a href="https://github.com/login" target="_blank" class="hidden-link"></a>
-                        <div class="tool-tags">
-                            <span class="tool-tag versioning">Versioning</span>
-                            <span class="tool-tag">🇹🇬</span>
-                        </div>
+                    <!-- Papy-Tux -->
+                    <div class="tool-card" data-link="https://papy-tux.legtux.org/doc1006/index.html#mozTocId953615">
+                        <div class="tool-icon"><i class="fas fa-penguin"></i></div>
+                        <h3 class="tool-title">Papy-Tux</h3>
+                        <p class="tool-description">Documentation Linux / initiation système</p>
+                        <a href="https://papy-tux.legtux.org/doc1006/index.html#mozTocId953615" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">Doc</span><span class="tool-tag">🐧</span></div>
+                    </div>
+                    <!-- CodeChef -->
+                    <div class="tool-card" data-link="https://www.codechef.com/getting-started">
+                        <div class="tool-icon"><i class="fas fa-utensils"></i></div>
+                        <h3 class="tool-title">CodeChef</h3>
+                        <p class="tool-description">Débuter, exercices, compétitions de programmation</p>
+                        <a href="https://www.codechef.com/getting-started" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">Apprendre</span></div>
+                    </div>
+                    <!-- CodeAnywhere -->
+                    <div class="tool-card" data-link="https://app.codeanywhere.com/">
+                        <div class="tool-icon"><i class="fas fa-cloud"></i></div>
+                        <h3 class="tool-title">CodeAnywhere</h3>
+                        <p class="tool-description">IDE cloud collaboratif, développement à distance</p>
+                        <a href="https://app.codeanywhere.com/" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">IDE</span></div>
+                    </div>
+                    <!-- CodePen -->
+                    <div class="tool-card" data-link="https://codepen.io/trending">
+                        <div class="tool-icon"><i class="fab fa-codepen"></i></div>
+                        <h3 class="tool-title">CodePen</h3>
+                        <p class="tool-description">Trending, front-end, expérimentations sociales</p>
+                        <a href="https://codepen.io/trending" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">Frontend</span></div>
+                    </div>
+                    <!-- OneCompiler -->
+                    <div class="tool-card" data-link="https://onecompiler.com/html">
+                        <div class="tool-icon"><i class="fas fa-file-code"></i></div>
+                        <h3 class="tool-title">OneCompiler</h3>
+                        <p class="tool-description">Compilateur en ligne HTML, CSS, JS, Python...</p>
+                        <a href="https://onecompiler.com/html" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">Multi-langage</span></div>
+                    </div>
+                    <!-- PlayCode -->
+                    <div class="tool-card" data-link="https://playcode.io/">
+                        <div class="tool-icon"><i class="fas fa-play"></i></div>
+                        <h3 class="tool-title">PlayCode</h3>
+                        <p class="tool-description">Sandbox rapide, environnement de test instantané</p>
+                        <a href="https://playcode.io/" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">Sandbox</span></div>
+                    </div>
+                    <!-- WebCode.tools -->
+                    <div class="tool-card" data-link="https://webcode.tools/">
+                        <div class="tool-icon"><i class="fas fa-wrench"></i></div>
+                        <h3 class="tool-title">WebCode.tools</h3>
+                        <p class="tool-description">Générateur de code CSS, HTML, meta, schema</p>
+                        <a href="https://webcode.tools/" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">Générateur</span></div>
                     </div>
                 </div>
+                <p style="margin-top: 20px; font-size:0.8rem; color: #4a6a5c;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> 8 liens formation — regroupés par KOLA Maniwah</p>
             </div>
 
-            <!-- Hosting Tab - BOUTONS COMPACTS -->
+            <!-- Onglet HEBERGEMENT (conservé) -->
             <div class="tab-content" id="hosting">
                 <div class="tab-header">
                     <h2 class="tab-title"><i class="fas fa-server"></i> Hébergement</h2>
-                    <p class="tab-description">Solutions d'hébergement adaptées aux besoins togolais.</p>
                 </div>
-                
                 <div class="buttons-grid">
-                    <!-- Netlify - COMPACT -->
-                    <div class="tool-card featured-card" data-link="https://app.netlify.com/login">
-                        <div class="featured-badge">#1</div>
-                        <div class="tool-icon">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                        </div>
+                    <div class="tool-card" data-link="https://app.netlify.com/login">
+                        <div class="tool-icon"><i class="fas fa-cloud-upload-alt"></i></div>
                         <h3 class="tool-title">Netlify</h3>
-                        <p class="tool-description">Hébergement moderne populaire pour déploiement continu de sites.</p>
+                        <p class="tool-description">Hébergement moderne, déploiement continu</p>
                         <a href="https://app.netlify.com/login" target="_blank" class="hidden-link"></a>
-                        <div class="tool-tags">
-                            <span class="tool-tag hosting">Hosting</span>
-                            <span class="tool-tag">🇹🇬</span>
-                        </div>
+                        <div class="tool-tags"><span class="tool-tag">Hosting</span></div>
                     </div>
-                    
-                    <!-- JotForm - COMPACT -->
                     <div class="tool-card" data-link="https://www.jotform.com/">
-                        <div class="tool-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
+                        <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
                         <h3 class="tool-title">JotForm</h3>
-                        <p class="tool-description">Création de formulaires en ligne avec hébergement intégré.</p>
+                        <p class="tool-description">Formulaires en ligne, hébergement intégré</p>
                         <a href="https://www.jotform.com/" target="_blank" class="hidden-link"></a>
-                        <div class="tool-tags">
-                            <span class="tool-tag forms">Formulaires</span>
-                            <span class="tool-tag">🇹🇬</span>
-                        </div>
+                        <div class="tool-tags"><span class="tool-tag">Forms</span></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Design Tab - BOUTONS COMPACTS -->
+            <!-- Onglet CONCEPTION (conservé) -->
             <div class="tab-content" id="design">
                 <div class="tab-header">
-                    <h2 class="tab-title"><i class="fas fa-paint-brush"></i> WPA</h2>
-                    <p class="tab-description">Applications web progressives adaptées au marché africain.</p>
+                    <h2 class="tab-title"><i class="fas fa-paint-brush"></i> Conception WPA</h2>
+                </div>
+                <div class="buttons-grid">
+                    <div class="tool-card" data-link="https://webcatalog.io/fr/apps/deepseek">
+                        <div class="tool-icon"><i class="fas fa-robot"></i></div>
+                        <h3 class="tool-title">DeepSeek PWA</h3>
+                        <p class="tool-description">Assistant IA, application web progressive</p>
+                        <a href="https://webcatalog.io/fr/apps/deepseek" target="_blank" class="hidden-link"></a>
+                        <div class="tool-tags"><span class="tool-tag">PWA</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOUVEL ONGLET : DEV ATELIER - Accès au fichier outils de travail.html -->
+            <div class="tab-content" id="atelier">
+                <div class="tab-header">
+                    <h2 class="tab-title"><i class="fas fa-toolbox"></i> Dev Atelier</h2>
+                    <span style="background: var(--togo-yellow); padding: 8px 20px; border-radius: 40px; font-weight: 700; color: var(--togo-green);">KOLA Maniwah</span>
                 </div>
                 
-                <div class="buttons-grid">
-                    <!-- DeepSeek PWA - COMPACT -->
-                    <div class="tool-card featured-card" data-link="https://webcatalog.io/fr/apps/deepseek">
-                        <div class="featured-badge">IA</div>
-                        <div class="tool-icon">
-                            <i class="fas fa-robot"></i>
+                <div style="background: linear-gradient(145deg, #fffaf0, #fffdf9); border-radius: 32px; padding: 28px; border: 2px solid var(--togo-yellow); margin-top: 15px; text-align: center; box-shadow: 0 15px 25px -10px rgba(0,106,78,0.15);">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 18px;">
+                        <div style="background: var(--togo-green); width: 80px; height: 80px; border-radius: 30px; display: flex; align-items: center; justify-content: center; border: 3px solid var(--togo-yellow);">
+                            <i class="fas fa-laptop-code" style="font-size: 2.8rem; color: white;"></i>
                         </div>
-                        <h3 class="tool-title">DeepSeek PWA</h3>
-                        <p class="tool-description">Assistant IA accessible via application web progressive.</p>
-                        <a href="https://webcatalog.io/fr/apps/deepseek" target="_blank" class="hidden-link"></a>
-                        <div class="tool-tags">
-                            <span class="tool-tag pwa">PWA</span>
-                            <span class="tool-tag">🇹🇬</span>
+                        <h3 style="font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, var(--togo-green), var(--togo-red)); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                            outils de travail.html
+                        </h3>
+                        <p style="font-size: 1rem; color: #2c4a3e; max-width: 550px; margin: 5px 0;">
+                            <i class="fas fa-cog" style="color: var(--togo-yellow);"></i> 
+                            Fichier complet · 8 liens répartis en 4 onglets (Environnements, Bac à sable, Documentation, Tous les liens)
+                        </p>
+                        
+                        <!-- Bouton d'accès direct au fichier outils de travail.html -->
+                        <a href="outils%20de%20travail.html" target="_blank" style="display: inline-flex; align-items: center; gap: 15px; background: linear-gradient(145deg, var(--togo-green), #0a5a40); color: white; font-size: 1.2rem; font-weight: 700; padding: 16px 38px; border-radius: 60px; text-decoration: none; margin-top: 12px; border: 3px solid var(--togo-yellow); box-shadow: 0 12px 22px rgba(0,106,78,0.3); transition: all 0.25s;">
+                            <i class="fas fa-toolbox"></i> 
+                            Ouvrir Dev Atelier
+                            <i class="fas fa-arrow-right" style="background: var(--togo-yellow); color: var(--togo-green); padding: 6px; border-radius: 50%;"></i>
+                        </a>
+                        
+                        <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                            <span style="background: #fff1d6; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--togo-yellow); font-size: 0.85rem;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> CodeAnywhere</span>
+                            <span style="background: #fff1d6; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--togo-yellow); font-size: 0.85rem;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> CodePen</span>
+                            <span style="background: #fff1d6; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--togo-yellow); font-size: 0.85rem;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> WebCode.tools</span>
+                            <span style="background: #fff1d6; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--togo-yellow); font-size: 0.85rem;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> PlayCode</span>
+                            <span style="background: #fff1d6; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--togo-yellow); font-size: 0.85rem;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> OneCompiler</span>
+                            <span style="background: #fff1d6; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--togo-yellow); font-size: 0.85rem;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> Papy-Tux</span>
+                            <span style="background: #fff1d6; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--togo-yellow); font-size: 0.85rem;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> CodeChef</span>
+                            <span style="background: #fff1d6; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--togo-yellow); font-size: 0.85rem;"><i class="fas fa-check-circle" style="color: var(--togo-green);"></i> WebCode.run</span>
                         </div>
+                        <p style="margin-top: 20px; font-size: 0.9rem; background: white; padding: 12px 22px; border-radius: 60px; border: 1px dashed var(--togo-green);">
+                            <i class="fas fa-info-circle"></i> 4 onglets — Environnements • Bac à sable • Documentation • Tous les liens
+                        </p>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- Footer -->
+        <!-- Footer avec signature -->
         <footer>
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>WebDev Togo</h3>
-                    <p>Pionnier du développement web moderne au Togo, combinant expertise locale et technologies de pointe.</p>
+                    <p>Innovation pédagogique · Expertise locale · Dev web & mobile</p>
                 </div>
-                
                 <div class="footer-info">
                     <h4><i class="fas fa-user-tie"></i> Fondateur</h4>
                     <p><strong>KOLA Maniwah Essohouna</strong></p>
                     <p><i class="fas fa-chalkboard-teacher"></i> Enseignant Mathématiques</p>
-                    <p><i class="fas fa-laptop-code"></i> Ingénieur Développement Web</p>
+                    <p><i class="fas fa-laptop-code"></i> Ingénieur Développement Web & Mobile</p>
                 </div>
             </div>
-            
             <div class="copyright">
-                <p>&copy; 2023 WebDev Platform Togo. Conçu avec <i class="fas fa-heart" style="color: var(--togo-red);"></i> au Togo</p>
+                <p>© 2025 WebDev Platform Togo · Conçu avec 🇹🇬 par KOLA Maniwah</p>
+                <p style="margin-top: 8px; font-size:0.75rem;">outils de travail.html intégré · 8 liens essentiels</p>
             </div>
         </footer>
     </div>
 
+    <!-- Script de gestion des onglets et clics -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tab switching functionality
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const tabsNavigation = document.getElementById('tabsNavigation');
-            
-            // Switch tabs
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const tabId = button.getAttribute('data-tab');
-                    
-                    // Update active tab button
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    
-                    // Show active tab content
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                        if (content.id === tabId) {
-                            content.classList.add('active');
-                        }
-                    });
-                    
-                    // Close mobile menu if open
-                    if (window.innerWidth <= 768) {
-                        tabsNavigation.classList.remove('active');
-                        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
+        (function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = {
+                'coding': document.getElementById('coding'),
+                'hosting': document.getElementById('hosting'),
+                'design': document.getElementById('design'),
+                'atelier': document.getElementById('atelier')
+            };
+
+            function activateTab(tabId) {
+                // Désactiver tous les boutons et contenus
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                Object.values(tabContents).forEach(content => {
+                    if (content) content.classList.remove('active');
                 });
-            });
-            
-            // Mobile menu toggle
-            mobileMenuToggle.addEventListener('click', () => {
-                tabsNavigation.classList.toggle('active');
-                
-                if (tabsNavigation.classList.contains('active')) {
-                    mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
-                } else {
-                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (event) => {
-                if (window.innerWidth <= 768) {
-                    const isClickInside = tabsNavigation.contains(event.target) || mobileMenuToggle.contains(event.target);
-                    
-                    if (!isClickInside && tabsNavigation.classList.contains('active')) {
-                        tabsNavigation.classList.remove('active');
-                        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                }
-            });
-            
-            // Gestion des cartes avec liens invisibles
-            const toolCards = document.querySelectorAll('.tool-card');
-            toolCards.forEach(card => {
-                // Animation au survol
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-                
-                // Gestion du clic pour ouvrir le lien caché
-                card.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const link = this.getAttribute('data-link');
-                    
-                    if (link) {
-                        // Animation de clic
-                        this.style.transform = 'scale(0.98)';
-                        setTimeout(() => {
-                            this.style.transform = 'translateY(-8px) scale(1.02)';
-                        }, 150);
-                        
-                        // Ouvrir le lien dans un nouvel onglet
-                        setTimeout(() => {
-                            window.open(link, '_blank');
-                        }, 200);
-                    }
-                });
-                
-                // Gestion du clic droit pour info
-                card.addEventListener('contextmenu', function(e) {
-                    e.preventDefault();
-                    const link = this.getAttribute('data-link');
-                    if (link) {
-                        // Message temporaire discret
-                        const tooltip = document.createElement('div');
-                        tooltip.textContent = 'Lien: ' + link;
-                        tooltip.style.position = 'fixed';
-                        tooltip.style.background = 'rgba(0, 106, 78, 0.9)';
-                        tooltip.style.color = 'white';
-                        tooltip.style.padding = '8px 12px';
-                        tooltip.style.borderRadius = '5px';
-                        tooltip.style.zIndex = '10000';
-                        tooltip.style.top = e.clientY + 'px';
-                        tooltip.style.left = e.clientX + 'px';
-                        tooltip.style.border = '1px solid var(--togo-yellow)';
-                        tooltip.style.fontSize = '0.8rem';
-                        tooltip.style.maxWidth = '250px';
-                        tooltip.style.wordBreak = 'break-all';
-                        
-                        document.body.appendChild(tooltip);
-                        
-                        setTimeout(() => {
-                            document.body.removeChild(tooltip);
-                        }, 1500);
-                    }
-                });
-            });
-            
-            // Responsive adjustments
-            function handleResize() {
-                if (window.innerWidth > 768) {
-                    tabsNavigation.style.display = 'flex';
-                    mobileMenuToggle.style.display = 'none';
-                } else {
-                    if (!tabsNavigation.classList.contains('active')) {
-                        tabsNavigation.style.display = 'none';
-                    } else {
-                        tabsNavigation.style.display = 'flex';
-                    }
-                    mobileMenuToggle.style.display = 'block';
-                }
+
+                // Activer le bouton et le contenu correspondant
+                document.querySelector(`.tab-btn[data-tab="${tabId}"]`)?.classList.add('active');
+                if (tabContents[tabId]) tabContents[tabId].classList.add('active');
             }
-            
-            // Initial call
-            handleResize();
-            
-            // Listen for resize events
-            window.addEventListener('resize', handleResize);
-            
-            // Add keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && tabsNavigation.classList.contains('active')) {
-                    tabsNavigation.classList.remove('active');
-                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-                
-                // Tab navigation with arrow keys
-                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-                    const activeTab = document.querySelector('.tab-btn.active');
-                    const tabsArray = Array.from(tabButtons);
-                    const currentIndex = tabsArray.indexOf(activeTab);
-                    
-                    let nextIndex;
-                    if (e.key === 'ArrowRight') {
-                        nextIndex = (currentIndex + 1) % tabsArray.length;
-                    } else {
-                        nextIndex = (currentIndex - 1 + tabsArray.length) % tabsArray.length;
-                    }
-                    
-                    tabsArray[nextIndex].click();
-                    tabsArray[nextIndex].focus();
-                }
-                
-                // Navigation par clavier dans les cartes
-                if (e.key === 'Enter') {
-                    const activeElement = document.activeElement;
-                    if (activeElement.classList.contains('tool-card')) {
-                        const link = activeElement.getAttribute('data-link');
-                        if (link) {
-                            window.open(link, '_blank');
-                        }
-                    }
-                }
+
+            // Écouteurs d'événements pour les onglets
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tabId = this.getAttribute('data-tab');
+                    activateTab(tabId);
+                });
             });
-            
-            // Scroll to top when switching tabs on mobile
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        window.scrollTo({
-                            top: document.querySelector('.main-content').offsetTop - 15,
-                            behavior: 'smooth'
-                        });
+
+            // Gestion des clics sur les cartes pour ouvrir les liens
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    const link = this.getAttribute('data-link');
+                    if (link) {
+                        window.open(link, '_blank');
+                        // effet visuel
+                        this.style.transform = 'scale(0.98)';
+                        setTimeout(() => { this.style.transform = ''; }, 180);
                     }
                 });
             });
-        });
+
+            // Onglet actif par défaut
+            activateTab('coding');
+        })();
     </script>
+    <!-- 
+        Mise à jour : ajout de l'onglet "Dev Atelier" avec accès direct au fichier outils de travail.html
+        - 8 liens formation présents dans l'onglet Codage
+        - Badge formateur KOLA Maniwah Essohouna (Mathématiques / Ingénieur Web & Mobile)
+        - Design responsive, compact, couleurs togolaises
+    -->
 </body>
 </html>
